@@ -4,16 +4,16 @@ import styled from "styled-components/native";
 import { colors } from "../colors";
 
 const StyledText = styled.Text`
-    font-size: 13px;
+    font-size: 15px;
     color: ${colors.gray};
     text-align: left;
-    font-family: Lato-Regular;
+    font-family: Lato-Bold;
 `;
 
 import { TextProps } from "./types";
 
-const SmallText: FunctionComponent<TextProps> = (props) => {
+const RegularText: FunctionComponent<TextProps> = (props) => {
     return <StyledText style={props.textStyles}>{props.children}</StyledText>;
 }
 
-export default SmallText;
+export default RegularText;

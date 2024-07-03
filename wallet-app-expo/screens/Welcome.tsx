@@ -35,6 +35,8 @@ const BottomSection = styled.View`
 `;
 
 import background from "./../assets/bgs/background_v1.png";
+import BigText from "../components/Texts/BigText";
+import SmallText from "../components/Texts/SmallText";
 
 const Welcome : FunctionComponent = () => {
     return (
@@ -45,10 +47,18 @@ const Welcome : FunctionComponent = () => {
             <TopSection>
                 <TopImage source={background}/>
             </TopSection>
+            <BottomSection>
+                <BigText textStyles={{ width: "70%", marginBottom: 25}}>
+                    Best way to track your money.
+                </BigText>
+                <SmallText textStyles={{ width: "70%", marginBottom: 25}}>
+                    Best payment method, connects your money to your friends!
+                </SmallText>
+            </BottomSection>
         </WelcomeContainer>
         
         </>
-    )
-}
+    );
+};
 
 export default Welcome;
