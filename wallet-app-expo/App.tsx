@@ -1,22 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, useColorScheme } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import React, { useEffect } from 'react';
+import Welcome from './screens/Welcome';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={{ color: 'white' }}>Open up App.tsx to start working on your app!</Text>
-      <Text style={{ color: 'white' }}>Alternatively, you can just procrastinate xoxo</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  let [fontsloaded] = useFonts({
+    "Lato-Bold": require("./assets/fonts/Lato-Bold.ttf"),
+    "Lato-Regular": require("./assets/fonts/Lato-Regular.ttf"),
+  });
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000000',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+  // Prevent splash screen from hiding automatically
+  useEffect(() => {
+    SplashScreen.preventAutoHideAsync();
+  }, []);
+
+  // Hide splash screen once fonts are loaded
+  useEffect(() => {
+    if (fontsloaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [fontsloaded]);
+
+  if (!fontsloaded) {
+    return null; // Return null until fonts are loaded
+  }
+
+  return (
+    <Welcome />
+  );
+};
+
