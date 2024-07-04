@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Welcome from './screens/Welcome';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import RootStack from './navigators/RootStack';
 
 export default function App() {
   let [fontsloaded] = useFonts({
@@ -27,7 +28,7 @@ export default function App() {
   }
 
   return (
-    <Welcome />
+    <RootStack Welcome={undefined} />
   );
 };
 
