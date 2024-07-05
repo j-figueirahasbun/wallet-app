@@ -10,6 +10,7 @@ const StyledView = styled.View`
     flex-direction: column;
     flex: 1;
     justify-content:center;
+    
 `;
 
 interface GreetingProps {

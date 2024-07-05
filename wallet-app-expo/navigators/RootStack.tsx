@@ -60,7 +60,7 @@ const RootStack: FunctionComponent<RootStackParamList> = () => {
                         {...props}
                         />
                     ),
-                    headerLeft: () => <></>
+                    headerLeft: () => (<></>)
                 }}
             />
         </Stack.Navigator>
