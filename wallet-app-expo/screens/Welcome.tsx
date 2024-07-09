@@ -40,7 +40,12 @@ import BigText from "../components/Texts/BigText";
 import SmallText from "../components/Texts/SmallText";
 import RegularButton from "../components/Buttons/RegularButton";
 
-const Welcome : FunctionComponent = () => {
+import { RootStackParamList } from "../navigators/RootStack";
+import { StackScreenProps } from "@react-navigation/stack";
+
+type Props = StackScreenProps<RootStackParamList, "Welcome">;
+
+const Welcome : FunctionComponent<Props> = ({navigation}) => {
     return (
         <>
         
@@ -56,7 +61,7 @@ const Welcome : FunctionComponent = () => {
                 <SmallText textStyles={{ width: "70%", marginBottom: 25}}>
                     Best payment method, connects your money to your friends!
                 </SmallText>
-                <RegularButton onPress={()=>{}}>
+                <RegularButton onPress={()=>{navigation.navigate("Home")}}>
                     Get Started
                 </RegularButton>
             </BottomSection>
