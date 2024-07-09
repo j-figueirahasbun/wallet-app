@@ -47,7 +47,7 @@ const RootStack: FunctionComponent<RootStackParamList> = () => {
                         imgContainerStyle={{backgroundColor : colors.tertiary}}/>
                 ),
             }}
-            initialRouteName="Balance">
+            initialRouteName="Welcome">
             <Stack.Screen
                 name="Welcome"
                 component={Welcome}

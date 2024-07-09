@@ -48,8 +48,17 @@ import card_bg from "./../../assets/bgs/background_transparent.png";
 import RegularText from "../Texts/RegularText";
 import SmallText from "../Texts/SmallText";
 
+import {useNavigation} from "@react-navigation/native";
+import {Props as HomeProps} from "./../../screens/Home";
+
 const CardItem: FunctionComponent<CardProps> = (props) => {
-    const handlePress = () => {};
+    
+    const navigation = useNavigation<HomeProps["navigation"]>();
+    
+    const handlePress = () => {
+        navigation.navigate("Balance", {...props});
+
+    };
     
     return (
         <CardBackground source={card_bg}>
